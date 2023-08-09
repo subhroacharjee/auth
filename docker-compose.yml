@@ -1,0 +1,26 @@
+version: '3'
+services:
+  api-service:
+    build:
+      context: .
+      dockerfile: Dockerfile-api
+    ports:
+      - 9000:80
+    depends_on:
+      - auth-db
+    env_file:
+      - .env
+  auth-db:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: auth
+    volumes:
+      - data:/var/lib/postgresql/data
+volumes:
+  data:
+networks:
+  default:
+    name: "ams"

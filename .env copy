@@ -1,0 +1,11 @@
+# app
+PORT=80
+SECRET_KEY=secret key
+# db
+DB_HOST=auth-db
+DB_PASSWORD=postgres
+DB_USER=postgres
+DB_NAME=auth
+DB_PORT=5432
+DB_SSL_MODE=disable
+DB_TIMEZONE=Asia/Kolkata
